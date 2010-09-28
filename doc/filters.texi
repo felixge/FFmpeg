@@ -353,6 +353,87 @@ drawbox
 drawbox=10:20:200:60:red@@0.5"
 @end example
 
+@section drawtext
+
+Draw text string or text from specified file on top of video using the
+libfreetype library.
+The filter also recognizes strftime() sequences in the provided text and
+expands them accordingly. Check the documentation of strftime().
+
+To enable compilation of this filter you need to configure FFmpeg with
+--enable-libfreetype.
+
+The filter accepts parameters as a list of @var{key}=@var{value} pairs,
+separated by ":".
+
+The description of the accepted parameters follows.
+
+@table @option
+
+@item fontfile
+The font file to be used for drawing text. Path must be included.
+This parameter is mandatory.
+
+@item text
+The text string to be drawn.
+This parameter is mandatory if no file is specified.
+
+@item textfile
+A text file containing text to be drawn. Max of 1024 characters are
+read from the file.
+
+This parameter is mandatory if no text string is specified.
+
+If both text and textfile are specified, an error is thrown.
+
+@item x, y
+The offsets where text will be drawn within the video frame.
+Relative to the top/left border of the output image.
+
+The default value of @var{x} and @var{y} is 0.
+
+@item fontsize
+The font size to be used for drawing text.
+The default value of @var{size} is 16.
+
+@item fgcolor
+The foreground color to be used for drawing text.
+Either a string (e.g. "red") or in 0xRRGGBB[AA] format
+(e.g. "0xff000033"), possibly followed by an alpha specifier.
+The default value of @var{fgcolor} is "black".
+
+@item bgcolor
+The background color to be used for drawing box around text or drawing
+text outline based on option selected.
+Either a string (e.g. "yellow") or in 0xRRGGBB[AA] format
+(e.g. "0xff00ff"), possibly followed by an alpha specifier.
+
+The default value of @var{bgcolor} is "white".
+
+@item box
+Used to draw a box around text using background color.
+Value should be either 1 (enable) or 0 (disable).
+The default value of @var{box} is 0.
+
+@item outline
+Used to draw an outline around text using background color.
+Value should be either 1 (enable) or 0 (disable).
+The default value of @var{outline} is 0.
+
+@end table
+
+@example
+drawtext="fontfile=FreeSerif.ttf: text='Test Text': x=100: y=50: fontsize=24:
+          fgcolor=yellow@@0.2: bgcolor=red@@0.2: box=1"
+@end example
+
+Draw 'Test Text' with font FreeSerif of size 24 at (100,50), text color is yellow,
+background color is red, draw a box around text. Both the text and the
+box have an opacity of 20%.
+
+Note that the double quotes are not necessary if spaces are not used within
+the parameter list.
+
 @section fifo
 
 Buffer input images and send them when they are requested.
