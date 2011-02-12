@@ -480,6 +480,14 @@ format=yuv420p
 format=yuv420p:yuv444p:yuv410p
 @end example
 
+@section fps
+
+Modify the framerate of the input video to a chosen one.
+
+@example
+./ffmpeg -i in.avi -vf "fps=30000:1001" out.avi
+@end example
+
 @anchor{frei0r}
 @section frei0r
 
