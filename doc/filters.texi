@@ -985,6 +985,11 @@ not specified it will use the default value of 16.
 Adding this in the beginning of filter chains should make filtering
 faster due to better use of the memory cache.
 
+@section split
+
+See the example in the introduction section.
+The input video is passed on to two outputs.
+
 @section transpose
 
 Transpose rows with columns in the input video and optionally flip it.
