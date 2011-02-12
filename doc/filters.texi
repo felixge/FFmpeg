@@ -847,6 +847,14 @@ format=monow, pixdesctest
 
 can be used to test the monowhite pixel format descriptor definition.
 
+@section rotate
+
+Rotate video by a chosen amount in degrees. By default, 45 degrees.
+
+@example
+./ffmpeg -i in.avi -vf "rotate=30" out.avi
+@end example
+
 @section scale
 
 Scale the input video to @var{width}:@var{height} and/or convert the image format.

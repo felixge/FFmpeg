@@ -41,6 +41,7 @@ OBJS-$(CONFIG_OCV_FILTER)                    += vf_libopencv.o
 OBJS-$(CONFIG_OVERLAY_FILTER)                += vf_overlay.o
 OBJS-$(CONFIG_PAD_FILTER)                    += vf_pad.o
 OBJS-$(CONFIG_PIXDESCTEST_FILTER)            += vf_pixdesctest.o
+OBJS-$(CONFIG_ROTATE_FILTER)                 += vf_rotate.o
 OBJS-$(CONFIG_SCALE_FILTER)                  += vf_scale.o
 OBJS-$(CONFIG_SETDAR_FILTER)                 += vf_aspect.o
 OBJS-$(CONFIG_SETPTS_FILTER)                 += vf_setpts.o
