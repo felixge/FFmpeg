@@ -434,6 +434,25 @@ box have an opacity of 20%.
 Note that the double quotes are not necessary if spaces are not used within
 the parameter list.
 
+@section fade
+
+Apply fade-in/out effect to input video.
+
+A few usage examples follow, usable too as test scenarios.
+@example
+# Fade in first 30 frames of video
+ffmpeg -i input.avi -vfilters fade=in:0:30 output.avi
+
+# Fade out last 45 frames of a 200-frame video
+ffmpeg -i input.avi -vfilters fade=out:155:45 output.avi
+
+# Fade in first 25 frames and fade out last 25 frames of a 1000-frame video
+ffmpeg -i input.avi -vfilters "fade=in:0:25, fade=out:975:25" output.avi
+
+# Make first 5 frames black, then fade in from frame 5-24
+ffmpeg -i input.avi -vfilters "fade=in:5:20" output.avi
+@end example
+
 @section fifo
 
 Buffer input images and send them when they are requested.
