@@ -34,6 +34,7 @@ OBJS-$(CONFIG_FREI0R_FILTER)                 += vf_frei0r.o
 OBJS-$(CONFIG_GRADFUN_FILTER)                += vf_gradfun.o
 OBJS-$(CONFIG_HFLIP_FILTER)                  += vf_hflip.o
 OBJS-$(CONFIG_HQDN3D_FILTER)                 += vf_hqdn3d.o
+OBJS-$(CONFIG_NEGATE_FILTER)                 += vf_negate.o
 OBJS-$(CONFIG_NOFORMAT_FILTER)               += vf_format.o
 OBJS-$(CONFIG_NULL_FILTER)                   += vf_null.o
 OBJS-$(CONFIG_OCV_FILTER)                    += vf_libopencv.o

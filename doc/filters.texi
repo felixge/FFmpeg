@@ -605,6 +605,14 @@ a float number which specifies chroma temporal strength, defaults to
 @var{luma_tmp}*@var{chroma_spatial}/@var{luma_spatial}
 @end table
 
+@section negate
+
+Convert a video to its negative.
+
+@example
+./ffmpeg -i in.avi -vf "negate" out.avi
+@end example
+
 @section noformat
 
 Force libavfilter not to use any of the specified pixel formats for the
